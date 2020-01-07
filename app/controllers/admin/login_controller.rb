@@ -27,7 +27,8 @@ class Admin::LoginController < ApplicationController
       session["user_id"]=user.id;
       session[:user]=user;
       #设置菜单
-      session[:menus]=Admin::Menu.all;
+      menus = Admin::Menu.all;
+      session[:menus]=menus;
       
       redirect_to "/admin/main";
     else 

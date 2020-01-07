@@ -39,7 +39,7 @@
 <div class="form-group">
   <%= f.label :real_name  ,"真实姓名",class:"col-md-2 control-label"%>
   <div class="col-md-10">
-  <%= f.text_field :real_name   , class:"form-control" , placeholder:"真实姓名",required:true%>
+    <%= f.text_field :real_name   , class:"form-control" , placeholder:"真实姓名",required:true%>
   </div>
 </div>
 
@@ -59,50 +59,54 @@
 
 <div class="form-group">
   <%= f.label :gender,"性  别",class:"col-md-2 control-label"%>
-  <div class="col-md-3">
-  <%# <select class="form-control">
+  <div class="col-md-10">
+    <%# <select class="form-control">
       <option value="true">男</option>
       <option value="false" selected="true">女</option>
     </select> %>
-  <%= f.check_box :gender , class:"form-control" %>
+    <%= f.check_box :gender %>
   </div>
 </div>
 
-
-
 <div class="form-group">
-  <%= f.label :enabled %>
-  <%= f.text_field :enabled %>
-</div>
-
-
-
-<div class="form-group">
-  <%= f.label :is_enabled %>
-  <%= f.check_box :is_enabled %>
+  <%= f.label :is_enabled  ,"是否可用",class:"col-md-2 control-label"%>
+  <div class="col-md-10">
+    <%= f.check_box :is_enabled %>
+  </div>
 </div>
 
 <div class="form-group">
-  <%= f.label :is_locked %>
-  <%= f.check_box :is_locked %>
+  <%= f.label :is_locked ,"是否锁定",class:"col-md-2 control-label"%>
+  <div class="col-md-10">
+    <%= f.check_box :is_locked %>
+  </div>
 </div>
 
 <div class="form-group">
-  <%= f.label :is_expired %>
-  <%= f.check_box :is_expired %>
+  <%= f.label :is_expired ,"是否过期",class:"col-md-2 control-label"%>
+  <div class="col-md-10">
+    <%= f.check_box :is_expired %>
+  </div>
 </div>
 
 <div class="form-group">
-  <%= f.label :status %>
-  <%= f.number_field :status %>
+  <%= f.label :status,"状态",class:"col-md-2 control-label"%>
+  <div class="col-md-10">
+    <%= f.number_field :status %>
+  </div>
 </div>
 
 <div class="form-group">
-  <%= f.label :type %>
-  <%= f.number_field :type %>
+  <%= f.label :type ,"类型",class:"col-md-2 control-label"%>
+  <div class="col-md-10">
+    <%= f.number_field :type %>
+  </div>
 </div>
 
-<div class="actions">
-  <%= f.submit "确定", class:"btn btn-primary" %>
+<div class="actions form-group">
+  <div class="col-md-2"></div>
+  <div class="col-md-10">
+    <%= f.submit "提交", class:"btn btn-primary" %>
+  </div>
 </div>
 <% end %>
