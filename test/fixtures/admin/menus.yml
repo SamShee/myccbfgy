@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  url: MyString
+  icon: MyString
+  icon_location: MyString
+  created_by: MyString
+  updated_by: MyString
+  enabled: MyString
+  is_enabled: false
+  is_locked: false
+  is_expired: false
+  status: 1
+  type: 1
+  parent_id: 1
+
+two:
+  name: MyString
+  url: MyString
+  icon: MyString
+  icon_location: MyString
+  created_by: MyString
+  updated_by: MyString
+  enabled: MyString
+  is_enabled: false
+  is_locked: false
+  is_expired: false
+  status: 1
+  type: 1
+  parent_id: 1

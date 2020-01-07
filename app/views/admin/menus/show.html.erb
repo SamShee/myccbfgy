@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @admin_menu.name %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @admin_menu.url %>
+</p>
+
+<p>
+  <strong>Icon:</strong>
+  <%= @admin_menu.icon %>
+</p>
+
+<p>
+  <strong>Icon location:</strong>
+  <%= @admin_menu.icon_location %>
+</p>
+
+<p>
+  <strong>Created by:</strong>
+  <%= @admin_menu.created_by %>
+</p>
+
+<p>
+  <strong>Updated by:</strong>
+  <%= @admin_menu.updated_by %>
+</p>
+
+<p>
+  <strong>Enabled:</strong>
+  <%= @admin_menu.enabled %>
+</p>
+
+<p>
+  <strong>Is enabled:</strong>
+  <%= @admin_menu.is_enabled %>
+</p>
+
+<p>
+  <strong>Is locked:</strong>
+  <%= @admin_menu.is_locked %>
+</p>
+
+<p>
+  <strong>Is expired:</strong>
+  <%= @admin_menu.is_expired %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @admin_menu.status %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @admin_menu.type %>
+</p>
+
+<p>
+  <strong>Parent:</strong>
+  <%= @admin_menu.parent_id %>
+</p>
+
+<%= link_to 'Edit', edit_admin_menu_path(@admin_menu) %> |
+<%= link_to 'Back', admin_menus_path %>

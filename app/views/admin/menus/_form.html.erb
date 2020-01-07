@@ -1,0 +1,82 @@
+<%= form_for(admin_menu) do |f| %>
+  <% if admin_menu.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(admin_menu.errors.count, "error") %> prohibited this admin_menu from being saved:</h2>
+
+      <ul>
+      <% admin_menu.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :url %>
+    <%= f.text_field :url %>
+  </div>
+
+  <div class="field">
+    <%= f.label :icon %>
+    <%= f.text_field :icon %>
+  </div>
+
+  <div class="field">
+    <%= f.label :icon_location %>
+    <%= f.text_field :icon_location %>
+  </div>
+
+  <div class="field">
+    <%= f.label :created_by %>
+    <%= f.text_field :created_by %>
+  </div>
+
+  <div class="field">
+    <%= f.label :updated_by %>
+    <%= f.text_field :updated_by %>
+  </div>
+
+  <div class="field">
+    <%= f.label :enabled %>
+    <%= f.text_field :enabled %>
+  </div>
+
+  <div class="field">
+    <%= f.label :is_enabled %>
+    <%= f.check_box :is_enabled %>
+  </div>
+
+  <div class="field">
+    <%= f.label :is_locked %>
+    <%= f.check_box :is_locked %>
+  </div>
+
+  <div class="field">
+    <%= f.label :is_expired %>
+    <%= f.check_box :is_expired %>
+  </div>
+
+  <div class="field">
+    <%= f.label :status %>
+    <%= f.number_field :status %>
+  </div>
+
+  <div class="field">
+    <%= f.label :type %>
+    <%= f.number_field :type %>
+  </div>
+
+  <div class="field">
+    <%= f.label :parent_id %>
+    <%= f.number_field :parent_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

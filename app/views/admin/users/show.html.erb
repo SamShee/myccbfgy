@@ -1,0 +1,82 @@
+<link href="/dashboard.css" rel="stylesheet">
+<%= render "admin/share/header" %>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-3 col-md-2 sidebar">
+      <%= render "admin/share/sidebar" %>
+    </div>
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <p id="notice"><%= notice %></p>
+
+        <p>
+          <strong>Username:</strong>
+          <%= @admin_user.username %>
+        </p>
+
+        <p>
+          <strong>Created by:</strong>
+          <%= @admin_user.created_by %>
+        </p>
+
+        <p>
+          <strong>Updated by:</strong>
+          <%= @admin_user.updated_by %>
+        </p>
+
+        <p>
+          <strong>Email:</strong>
+          <%= @admin_user.email %>
+        </p>
+
+        <p>
+          <strong>Gender:</strong>
+          <%= @admin_user.gender %>
+        </p>
+
+        <p>
+          <strong>Mobile:</strong>
+          <%= @admin_user.mobile %>
+        </p>
+
+        <p>
+          <strong>Enabled:</strong>
+          <%= @admin_user.enabled %>
+        </p>
+
+        <p>
+          <strong>Real name:</strong>
+          <%= @admin_user.real_name %>
+        </p>
+
+        <p>
+          <strong>Is enabled:</strong>
+          <%= @admin_user.is_enabled %>
+        </p>
+
+        <p>
+          <strong>Is locked:</strong>
+          <%= @admin_user.is_locked %>
+        </p>
+
+        <p>
+          <strong>Is expired:</strong>
+          <%= @admin_user.is_expired %>
+        </p>
+
+        <p>
+          <strong>Status:</strong>
+          <%= @admin_user.status %>
+        </p>
+
+        <p>
+          <strong>Type:</strong>
+          <%= @admin_user.type %>
+        </p>
+
+        <%= link_to '编辑', edit_admin_user_path(@admin_user) %> |
+        <%= link_to '返回', admin_users_path %>
+    </div>  
+  </div>
+</div>
+
+

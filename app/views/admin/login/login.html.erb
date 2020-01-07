@@ -1,0 +1,26 @@
+<div class="container">
+      <form class="form-signin" action="/admin/login/" accept-charset="UTF-8" method="post">
+      <%= tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token) %> 
+        <%# <h4 class="form-signin-heading">请登录</h4> %>
+        <%= image_tag("admin/login/logo.png", style:"margin-bottom:10px") %>
+       
+        <label for="inputUsername" class="sr-only">用户名</label>
+        <input type="text" id="inputUsername" name="username" class="form-control" style="margin-bottom:10px"  placeholder="用户名" required autofocus>
+        
+        <label for="inputPassword" class="sr-only">密码</label>
+        <input type="password" id="inputPassword"  name="password"  class="form-control" placeholder="密码" required>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" value="remember-me"> 记住我
+          </label>
+          <% if flash[:msg]%>
+          <label><%= flash[:msg]%></label>
+          <% end %>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
+      </form>
+
+    </div> <!-- /container -->
+
+<%# <h1>Admin::Login#login</h1>
+<p>Find me in app/views/admin/login/login.html.erb</p> %>

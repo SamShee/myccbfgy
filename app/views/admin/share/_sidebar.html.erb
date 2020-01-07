@@ -1,0 +1,6 @@
+<ul class="nav nav-sidebar">
+    <% @menus.each do |menu| %>
+    <li><a <% if menu["url"]!='' && menu["url"]!=nil %> href="<%= menu["url"]%>" <%end%>><%= menu["name"] %></a></li>
+    <% end %>
+    <%# <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li> %>
+</ul>

@@ -1,0 +1,16 @@
+<link href="/dashboard.css" rel="stylesheet">
+<%= render "admin/share/header" %>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-3 col-md-2 sidebar">
+      <%= render "admin/share/sidebar" %>
+    </div>
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+      <h4 class="sub-header">新建用户</h4>
+      <%= link_to '返回用户列表', admin_users_path %>
+      <%= render 'form', admin_user: @admin_user %>
+       
+    </div>  
+  </div>
+</div>
+

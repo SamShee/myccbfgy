@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @admin_channel.name %>
+</p>
+
+<p>
+  <strong>Parent:</strong>
+  <%= @admin_channel.parent_id %>
+</p>
+
+<p>
+  <strong>Created by:</strong>
+  <%= @admin_channel.created_by %>
+</p>
+
+<p>
+  <strong>Updated by:</strong>
+  <%= @admin_channel.updated_by %>
+</p>
+
+<%= link_to 'Edit', edit_admin_channel_path(@admin_channel) %> |
+<%= link_to 'Back', admin_channels_path %>
