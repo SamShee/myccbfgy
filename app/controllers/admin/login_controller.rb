@@ -1,5 +1,5 @@
 class Admin::LoginController < ApplicationController
-
+  layout "admin/admin_layout";
   # you can disable csrf protection on controller-by-controller basis:
   #skip_before_filter :verify_authenticity_token
 

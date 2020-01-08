@@ -1,6 +1,7 @@
 class Admin::AuthencatedController < ApplicationController
+    layout "admin/admin_layout";
     #判定是否有登录；
-    before_action :authrize
+    before_action :authrize;
 
     #该方法引进Redis缓存更好；
     protected def authrize

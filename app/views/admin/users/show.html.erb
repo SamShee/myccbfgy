@@ -1,4 +1,4 @@
-<link href="/dashboard.css" rel="stylesheet">
+<%@title="管理后台用户详情"%>
 <%= render "admin/share/header" %>
 <div class="container-fluid">
   <div class="row">
@@ -75,6 +75,9 @@
 
         <%= link_to '编辑', edit_admin_user_path(@admin_user) %> |
         <%= link_to '返回', admin_users_path %>
+        <button type="button" class="btn btn-default">
+          <span class="glyphicon glyphicon-sort-by-attributes"></span>
+        </button>
     </div>  
   </div>
 </div>
