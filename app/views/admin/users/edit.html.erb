@@ -1,18 +1,32 @@
 <%@title="管理后台用户编辑页"%>
-<link href="/dashboard.css" rel="stylesheet">
 <%= render "admin/share/header" %>
 <div class="container-fluid">
   <div class="row">
     <div class="col-sm-3 col-md-2 sidebar">
-      <%= render "admin/share/sidebar" %>
+      <%= render "admin/share/sidebar" , select_menu: "/admin/users" %>
     </div>
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <ul class="breadcrumb">
+          <li><a href="/admin/main">首页</a></li>
+          <li><a href="/admin/users" class="active">用户管理</a></li>
+          <%# <li><a class="active">用户编辑</a></li> %>
+        </ul>
         <h4 class="sub-header">用户编辑</h4>
         <%= render 'form', admin_user: @admin_user %>
-        <%= link_to '详情', @admin_user %> |
-        <%= link_to '返回', admin_users_path %>
+        <%= link_to raw("<i class=\"fa fa-wrench\" aria-hidden=\"true\">&nbsp;详情</i>"), @admin_user ,{ class:'btn btn-info'}%>
+        <%= link_to raw("<i class=\"fa fa-arrow-circle-left\" aria-hidden=\"true\">&nbsp;返回</i>"), admin_users_path ,{ class:'btn btn-primary'}%>
+
+        <%# link_to '详情', @admin_user %> 
+        <%# link_to '返回', admin_users_path %>
     </div>  
   </div>
 </div>
+<script type="text/javascript">
+    $(function(){ 
+　　  document.getElementById("admin_user_username").disabled=true;
+        $('#admin_user_username').attr("disabled",true);
+　　});
+</script>
+
 
 

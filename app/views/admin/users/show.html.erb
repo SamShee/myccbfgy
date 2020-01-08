@@ -3,9 +3,15 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-sm-3 col-md-2 sidebar">
-      <%= render "admin/share/sidebar" %>
+      <%= render "admin/share/sidebar", select_menu: "/admin/users"  %>
     </div>
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <ul class="breadcrumb">
+          <li><a href="/admin/main">首页</a></li>
+          <li><a href="/admin/users" class="active">用户管理</a></li>
+          <%# <li><a href="#" class="active">用户详情</a></li> %>
+      </ul>
+        <h4 class="sub-header">用户详情</h4>
         <p id="notice"><%= notice %></p>
 
         <p>
@@ -72,12 +78,9 @@
           <strong>Type:</strong>
           <%= @admin_user.type %>
         </p>
+        <%= link_to raw("<i class=\"fa fa-wrench\" aria-hidden=\"true\">&nbsp;编辑</i>"), edit_admin_user_path(@admin_user) ,{ class:'btn btn-warning'}%>
+        <%= link_to raw("<i class=\"fa fa-arrow-circle-left\" aria-hidden=\"true\">&nbsp;返回</i>"), admin_users_path ,{ class:'btn btn-primary'}%>
 
-        <%= link_to '编辑', edit_admin_user_path(@admin_user) %> |
-        <%= link_to '返回', admin_users_path %>
-        <button type="button" class="btn btn-default">
-          <span class="glyphicon glyphicon-sort-by-attributes"></span>
-        </button>
     </div>  
   </div>
 </div>

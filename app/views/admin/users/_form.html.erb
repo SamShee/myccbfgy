@@ -16,9 +16,9 @@
   %>
 
 <div class="form-group">
-  <%= f.label :username ,"用户名",class:"col-md-2 control-label"%>
+  <%= f.label :username ,"用户名",class:"col-md-2 control-label",style:"color:red"%>
   <div class="col-md-10">
-    <%= f.text_field :username , class:"form-control" , placeholder:"用户名",required:true ,autofocus:true%>
+    <%= f.text_field :username , size: "30", class:"form-control" , placeholder:"用户名",required:true %>
   </div>
 </div>
 
@@ -39,14 +39,14 @@
 <div class="form-group">
   <%= f.label :real_name  ,"真实姓名",class:"col-md-2 control-label"%>
   <div class="col-md-10">
-    <%= f.text_field :real_name   , class:"form-control" , placeholder:"真实姓名",required:true%>
+    <%= f.text_field :real_name   , class:"form-control" , placeholder:"真实姓名",required:true,autofocus:true%>
   </div>
 </div>
 
 <div class="form-group">
   <%= f.label :email ,"邮  箱",class:"col-md-2 control-label"%>
   <div class="col-md-10">
-    <%= f.text_field :email , class:"form-control" , placeholder:"邮  箱",required:true%>
+    <%= f.email_field :email , class:"form-control" , placeholder:"邮  箱",required:true%>
   </div>
 </div>
 
@@ -60,32 +60,56 @@
 <div class="form-group">
   <%= f.label :gender,"性  别",class:"col-md-2 control-label"%>
   <div class="col-md-10">
-    <%# <select class="form-control">
-      <option value="true">男</option>
-      <option value="false" selected="true">女</option>
-    </select> %>
-    <%= f.check_box :gender %>
+    <div class="radio">
+      <label>
+        <%=f.radio_button(:gender, true)%>男
+      </label>
+      <label>
+          <%=f.radio_button(:gender, false)%>女
+      </label>
+    </div>
   </div>
 </div>
 
 <div class="form-group">
   <%= f.label :is_enabled  ,"是否可用",class:"col-md-2 control-label"%>
   <div class="col-md-10">
-    <%= f.check_box :is_enabled %>
+    <div class="radio">
+      <label>
+        <%=f.radio_button(:is_enabled, true)%>是
+      </label>
+      <label>
+        <%=f.radio_button(:is_enabled, false)%>否
+      </label>
+    </div>
   </div>
 </div>
 
 <div class="form-group">
   <%= f.label :is_locked ,"是否锁定",class:"col-md-2 control-label"%>
   <div class="col-md-10">
-    <%= f.check_box :is_locked %>
+    <div class="radio">
+      <label>
+        <%=f.radio_button(:is_locked, true)%>是
+      </label>
+      <label>
+        <%=f.radio_button(:is_locked, false)%>否
+      </label>
+    </div>
   </div>
 </div>
 
 <div class="form-group">
   <%= f.label :is_expired ,"是否过期",class:"col-md-2 control-label"%>
   <div class="col-md-10">
-    <%= f.check_box :is_expired %>
+    <div class="radio">
+      <label>
+        <%=f.radio_button(:is_expired, true)%>是
+      </label>
+      <label>
+        <%=f.radio_button(:is_expired, false)%>否
+      </label>
+    </div>
   </div>
 </div>
 
