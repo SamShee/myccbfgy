@@ -1,4 +1,18 @@
-<p id="notice"><%= notice %></p>
+<%@title="管理后台菜单详情"%>
+<%= render "admin/share/header" %>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-3 col-md-2 sidebar">
+      <%= render "admin/share/sidebar", select_menu: "/admin/menus"  %>
+    </div>
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <ul class="breadcrumb">
+          <li><a href="/admin/main">首页</a></li>
+          <li><a href="/admin/menus" class="active">菜单管理</a></li>
+          <%# <li><a href="#" class="active">菜单详情</a></li> %>
+      </ul>
+        <h4 class="sub-header">菜单详情</h4>
+        <p id="notice"><%= notice %></p>
 
 <p>
   <strong>Name:</strong>
@@ -64,6 +78,11 @@
   <strong>Parent:</strong>
   <%= @admin_menu.parent_id %>
 </p>
+        <%= link_to raw("<i class=\"fa fa-wrench\" aria-hidden=\"true\">&nbsp;编辑</i>"), edit_admin_menu_path(@admin_menu) ,{ class:'btn btn-warning'}%>
+        <%= link_to raw("<i class=\"fa fa-arrow-circle-left\" aria-hidden=\"true\">&nbsp;返回</i>"), admin_menus_path ,{ class:'btn btn-primary'}%>
 
-<%= link_to 'Edit', edit_admin_menu_path(@admin_menu) %> |
-<%= link_to 'Back', admin_menus_path %>
+    </div>  
+  </div>
+</div>
+
+

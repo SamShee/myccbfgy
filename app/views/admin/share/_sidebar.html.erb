@@ -9,8 +9,9 @@
         <% if menu["url"]!='' && menu["url"]!=nil %> 
         href="<%= menu["url"]%>" <%end%>
         >
-        <%= menu["name"] %>
+        <%= menu["icon"].html_safe%>&nbsp;&nbsp;<%= menu["name"] %>
         </a>
+        
     </li>
     <% end %>
     

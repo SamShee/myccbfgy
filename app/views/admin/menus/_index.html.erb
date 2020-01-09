@@ -1,0 +1,71 @@
+<ul class="breadcrumb">
+  <li><a href="/admin/main">首页</a></li>
+  <li><a href="/admin/menus" class="active">菜单管理</a></li>
+</ul>
+<p id="notice"><%= notice %></p>
+<h4 class="sub-header">菜单列表</h4>
+<%= link_to raw("<i class=\"fa fa-plus\" aria-hidden=\"true\">&nbsp;添加菜单</i>"), new_admin_menu_path  ,{ class:'btn btn-success'}%>
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>名称</th>
+        <th>Url</th>
+        <th>图标</th>
+        <th style="text-align: center;">是否可用</th>
+        <th style="text-align: center;">是否锁定</th>
+        <th style="text-align: center;">是否过期</th>
+        <th style="text-align: center;">类型</th>
+        <th colspan="3" style="text-align: center;">操作</th>
+      </tr>
+    </thead>
+
+
+    <tbody>
+      <% @admin_menus.each do |admin_menu| %>
+      <tr>
+        <td><%= admin_menu.name %></td>
+        <td><%= admin_menu.url %></td>
+        <td><%= (admin_menu.icon).html_safe %></td>
+        <td style="text-align: center;">
+          <label>
+            <% if admin_menu.is_enabled== true %>
+            <%= "是"%>
+            <% else %>
+            <%= "否"%>
+            <% end %>
+          </label>
+        </td>
+        <td style="text-align: center;">
+          <label>
+            <% if admin_menu.is_locked== true %>
+            <%= "是"%>
+            <% else %>
+            <%= "否"%>
+            <% end %>
+          </label>
+        </td>
+        <td style="text-align: center;">
+          <label>
+            <% if admin_menu.is_expired== true %>
+            <%= "是"%>
+            <% else %>
+            <%= "否"%>
+            <% end %>
+          </label>
+        </td>
+        <td><%= admin_menu.type %></td>
+        <td>
+          <%= link_to raw("<i class=\"fa fa-info-circle\" aria-hidden=\"true\">&nbsp;详情</i>"), admin_menu ,{ class:'btn btn-info'}%>
+        </td>
+        <td>
+          <%= link_to raw("<i class=\"fa fa-wrench\" aria-hidden=\"true\">&nbsp;编辑</i>"), edit_admin_menu_path(admin_menu) ,{ class:'btn btn-warning'}%>
+        </td>
+        <td>
+          <%= link_to raw("<i class=\"fa fa-trash\" aria-hidden=\"true\">&nbsp;删除</i>"), admin_menu, method: :delete, data: { confirm: '你确定删除该条目吗?' },class:'btn btn-danger'%>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

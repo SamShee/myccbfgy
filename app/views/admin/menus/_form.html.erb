@@ -1,4 +1,4 @@
-<%= form_for(admin_menu) do |f| %>
+<%= form_for(admin_menu, html: {class: "form-horizontal",style:"max-width: 600px;"})  do |f| %>
   <% if admin_menu.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(admin_menu.errors.count, "error") %> prohibited this admin_menu from being saved:</h2>
@@ -11,72 +11,95 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+<div class="form-group">
+  <%= f.label :name ,"名称",class:"col-md-2 control-label",style:"color:red"%>
+  <div class="col-md-10">
+    <%= f.text_field :name , size: "30", class:"form-control" , placeholder:"名称",required:true %>
   </div>
+</div>
 
-  <div class="field">
-    <%= f.label :url %>
-    <%= f.text_field :url %>
+<div class="form-group">
+  <%= f.label :url ,"连接",class:"col-md-2 control-label",style:"color:red"%>
+  <div class="col-md-10">
+    <%= f.text_field :url , class:"form-control" , placeholder:"连接",required:true %>
   </div>
-
-  <div class="field">
-    <%= f.label :icon %>
-    <%= f.text_field :icon %>
-  </div>
-
-  <div class="field">
-    <%= f.label :icon_location %>
-    <%= f.text_field :icon_location %>
-  </div>
-
-  <div class="field">
-    <%= f.label :created_by %>
-    <%= f.text_field :created_by %>
-  </div>
-
-  <div class="field">
-    <%= f.label :updated_by %>
-    <%= f.text_field :updated_by %>
-  </div>
-
-  <div class="field">
-    <%= f.label :enabled %>
-    <%= f.text_field :enabled %>
-  </div>
-
-  <div class="field">
-    <%= f.label :is_enabled %>
-    <%= f.check_box :is_enabled %>
-  </div>
-
-  <div class="field">
-    <%= f.label :is_locked %>
-    <%= f.check_box :is_locked %>
-  </div>
-
-  <div class="field">
-    <%= f.label :is_expired %>
-    <%= f.check_box :is_expired %>
-  </div>
-
-  <div class="field">
-    <%= f.label :status %>
-    <%= f.number_field :status %>
-  </div>
-
-  <div class="field">
-    <%= f.label :type %>
-    <%= f.number_field :type %>
-  </div>
-
-  <div class="field">
-    <%= f.label :parent_id %>
+</div>
+<div class="form-group">
+  <%= f.label :parent_id ,"父亲",class:"col-md-2 control-label"%>
+  <div class="col-md-10">
     <%= f.number_field :parent_id %>
   </div>
+</div>
 
-  <div class="actions">
-    <%= f.submit %>
+<div class="form-group">
+  <%= f.label :icon ,"图标",class:"col-md-2 control-label",style:"color:red"%>
+  <div class="col-md-10">
+    <%= f.text_field :icon , class:"form-control" , placeholder:"图标",required:true %>
   </div>
+</div>
+ 
+<div class="form-group">
+  <%= f.label :is_enabled  ,"是否可用",class:"col-md-2 control-label"%>
+  <div class="col-md-10">
+    <div class="radio">
+      <label>
+        <%=f.radio_button(:is_enabled, true)%>是
+      </label>
+      <label>
+        <%=f.radio_button(:is_enabled, false)%>否
+      </label>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <%= f.label :is_locked ,"是否锁定",class:"col-md-2 control-label"%>
+  <div class="col-md-10">
+    <div class="radio">
+      <label>
+        <%=f.radio_button(:is_locked, true)%>是
+      </label>
+      <label>
+        <%=f.radio_button(:is_locked, false)%>否
+      </label>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <%= f.label :is_expired ,"是否过期",class:"col-md-2 control-label"%>
+  <div class="col-md-10">
+    <div class="radio">
+      <label>
+        <%=f.radio_button(:is_expired, true)%>是
+      </label>
+      <label>
+        <%=f.radio_button(:is_expired, false)%>否
+      </label>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <%= f.label :status,"状态",class:"col-md-2 control-label"%>
+  <div class="col-md-10">
+    <%= f.number_field :status %>
+  </div>
+</div>
+
+<div class="form-group">
+  <%= f.label :type ,"类型",class:"col-md-2 control-label"%>
+  <div class="col-md-10">
+    <%= f.number_field :type %>
+  </div>
+</div>
+
+<div class="actions form-group">
+  <div class="col-md-2"></div>
+  <div class="col-md-10">
+    <%= f.submit "提交", class:"btn btn-primary" %>
+  </div>
+</div>
 <% end %>
+
+
